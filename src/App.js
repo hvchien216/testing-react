@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [color, setColor] = useState('red');
+  
+  const newColor = color === 'red' ? 'blue' : 'red';
+
+  const click = () => {
+    setColor(newColor)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div data-testid='App' className="App">
+      <button onClick={click} style={{backgroundColor: color}}>Change to {newColor}</button>
+      <input type='checkbox'/>
     </div>
   );
 }
