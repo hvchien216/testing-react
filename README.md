@@ -3,7 +3,7 @@
 2. [Mocking css modules](https://jestjs.io/docs/webpack#mocking-css-modules)
 3. [W3 - Role definitions](https://www.w3.org/TR/wai-aria/#role_definitions)
 4. [Ecosystem user event](https://testing-library.com/docs/ecosystem-user-event/)
-5. [Common mistakes with React Testing Library](http://localhost:3000)
+5. [Common mistakes with React Testing Library](https://kentcdodds.com/blog/common-mistakes-with-react-testing-library#not-using-testing-library-eslint-plugins)
 
 ## screen Query Methods
 
