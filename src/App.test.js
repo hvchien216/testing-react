@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import App from './App';
+import App, { replaceCamelWithSpaces } from './App';
 
 // test('renders learn react link', () => {
 //   render(<App />);
@@ -23,7 +23,7 @@ test('button has correct initial color', () => {
   expect(colorButton).toHaveStyle({backgroundColor: 'blue'})
 
   //expect the button text to be 'Change to red'
-  expect(colorButton.textContent).toBe('Change to red');
+  expect(colorButton).toHaveTextContent('Change to red');
 
   // -------
   const appTag = screen.getByTestId('App');
@@ -40,4 +40,18 @@ test('initial conditions', () => {
   //check that the checkbox starts out unchecked
   const checkbox = screen.getByRole('checkbox');
   expect(checkbox).not.toBeChecked();
+})
+
+describe('spaces before camel-case capital letters', () => {
+  test('Works for no inner capital letters', () => {
+    expect(replaceCamelWithSpaces('Red')).toBe('Red')
+  })
+
+  test('Works for one inner capital letters', () => {
+    expect(replaceCamelWithSpaces('MidnightBlue')).toBe('Midnight Blue')
+  })
+
+  test('Works for multiple inner capital letters', () => {
+    expect(replaceCamelWithSpaces('MediumVioletRed')).toBe('Medium Violet Red')
+  })
 })
